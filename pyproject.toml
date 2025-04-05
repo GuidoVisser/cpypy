@@ -1,0 +1,29 @@
+[project]
+name = "cpypy"
+version = "0.1.0"
+description = "A toy project to integrate C++ code in python with pybind11"
+authors = [{name = "Guido Visser"}]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.2.4",
+    "pybind11>=2.13.6",
+    "setuptools>=78.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=64", "wheel", "pybind11"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["cpp_lib"]
+
+[[tool.setuptools.ext-modules]]
+name = "cpp_lib.cpp_lib"
+sources = ["src/cpp_lib/lib.cpp", "src/cpp_lib/lib_src/two.cpp", "src/cpp_lib/lib_src/three.cpp"]
+include-dirs = [
+    "/Users/guidovisser/.pyenv/versions/3.13.2/include/python3.13",
+    "/Users/guidovisser/Projects/cpypy/.venv/lib/python3.13/site-packages/pybind11/include"
+]
+extra-compile-args = ["-std=c++17"]

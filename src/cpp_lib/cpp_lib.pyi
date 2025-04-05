@@ -1,0 +1,6 @@
+# src/cpp_lib/cpp_lib.pyi
+
+from numpy import ndarray
+
+def scale_by_two(input: ndarray) -> ndarray: ...
+def scale_by_three(input: ndarray) -> ndarray: ...

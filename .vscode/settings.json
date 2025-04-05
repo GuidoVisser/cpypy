@@ -1,0 +1,6 @@
+{
+  "python.analysis.extraPaths": ["./src", "./typings"],
+  "python.analysis.stubPath": "./typings",
+  "python.autoComplete.extraPaths": ["./src"],
+  "python.defaultInterpreterPath": ".venv/bin/python"
+}
